@@ -7,7 +7,6 @@ function run()
     return mb_strtoupper($name);
   });
 
-    echo $collection;
     return $collection;
 
 }
