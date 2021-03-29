@@ -10,5 +10,10 @@
     ],
     "require": {
         "tightenco/collect": "^8.19"
+    },
+    "autoload": {
+      "files": [
+        "src/Runner.php"
+      ]
     }
 }
