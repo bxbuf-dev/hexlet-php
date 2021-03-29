@@ -8,5 +8,7 @@
             "email": "aleksei.semenchenko@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "tightenco/collect": "^8.19"
+    }
 }
