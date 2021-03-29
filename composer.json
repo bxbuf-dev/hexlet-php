@@ -1,0 +1,12 @@
+{
+    "name": "bxbuf-dev/hexlet-php",
+    "description": "First project with Hexlet",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Aleksei",
+            "email": "aleksei.semenchenko@outlook.com"
+        }
+    ],
+    "require": {}
+}
