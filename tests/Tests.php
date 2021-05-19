@@ -21,6 +21,67 @@ use function Hexlet\Php\Functions\takeOldest;
 use function Hexlet\Php\Functions\getChildren;
 use function Hexlet\Php\Functions\getGirlFriends;
 use function Hexlet\Php\Functions\getMenCountByYear;
+use function Hexlet\Php\Functions\getFreeDomainsCount;
+use function Hexlet\Php\Functions\getManWithLeastFriends;
+use function Hexlet\Php\Functions\without;
+use function Hexlet\Php\Functions\enlargeArrayImage;
+
+function testEnlargeArrayImage()
+{
+    $image = [
+        ['*','*','*','*'],
+        ['*',' ',' ','*'],
+        ['*',' ',' ','*'],
+        ['*','*','*','*']
+      ];
+    var_dump(enlargeArrayImage($image));
+}
+
+function testWithout()
+{
+    print_r(without([3, 4, 10, 4, 'true'], 4)); // [3, 10, 'true']
+    print_r(without(['3', 2, 6, 5, 11, 0], 0, 5, 11)); // ['3', 2]
+}
+
+function testGetManWithLeastFriends()
+{
+    $users = [
+        ['name' => 'Tirion', 'friends' => [
+            ['name' => 'Mira', 'gender' => 'female'],
+            ['name' => 'Ramsey', 'gender' => 'male']
+        ]],
+        ['name' => 'Bronn', 'friends' => []],
+        ['name' => 'Sam', 'friends' => [
+            ['name' => 'Aria', 'gender' => 'female'],
+            ['name' => 'Keit', 'gender' => 'female']
+        ]],
+        ['name' => 'Keit', 'friends' => []],
+        ['name' => 'Rob', 'friends' => [
+            ['name' => 'Taywin', 'gender' => 'male']
+        ]],
+    ];
+
+    var_dump(getManWithLeastFriends([]));
+    var_dump(getManWithLeastFriends($users));
+}
+
+
+function testGetFreeDomainsCount()
+{
+    $emails = [
+        'info@gmail.com',
+        'info@yandex.ru',
+        'info@hotmail.com',
+        'mk@host.com',
+        'support@hexlet.io',
+        'key@yandex.ru',
+        'sergey@gmail.com',
+        'vovan@gmail.com',
+        'vovan@hotmail.com'
+    ];
+     
+    print_r(getFreeDomainsCount($emails)); 
+}
 
 function testGetMenCountByYear()
 {

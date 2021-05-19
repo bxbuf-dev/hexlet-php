@@ -4,6 +4,10 @@ namespace Hexlet\Php\Functions;
 
 use Funct\Collection;
 
+const FREE_EMAIL_DOMAINS = [
+    'gmail.com', 'yandex.ru', 'hotmail.com'
+];
+
 function flatten(array $arr) //done
 {
     if (empty($arr)) {
@@ -195,7 +199,7 @@ function getGirlFriends($userList)
     $girlFriends = array_map(fn($users) => $users['friends'], $userList);
     $girlFriends = Collection\flatten($girlFriends);
     $girlFriends = array_filter($girlFriends, fn($friends) => $friends['gender'] == 'female');
-    
+
     return array_values($girlFriends);
 }
 
@@ -204,9 +208,52 @@ function getMenCountByYear($users)
     $men = array_filter($users, fn($usersList) => $usersList['gender'] == 'male');
     $years = array_map(fn($list) => substr($list['birthday'], 0, 4), $men);
     $qtyByYear = array_reduce($years, function ($acc, $year) {
-        $acc[$year] =
-            array_key_exists($year, $acc) ? $acc[$year] + 1 : 1;
+        $acc[$year] = ($acc[$year] ?? 0) + 1;
             return $acc;
     }, []);
     return $qtyByYear;
+}
+
+function getFreeDomainsCount($mailList)
+{
+    $domainList = array_map(fn($userList) => explode("@", $userList)[1], $mailList);
+    $freeDomains = array_filter(
+        $domainList,
+        fn($list) => in_array($list, FREE_EMAIL_DOMAINS)
+    );
+    $freeDomainsCount = array_reduce($freeDomains, function ($acc, $list) {
+        $acc[$list] = ($acc[$list] ?? 0) + 1;
+        return $acc;
+    }, []);
+    return $freeDomainsCount;
+}
+
+function getManWithLeastFriends($users)
+{
+    if (empty($users)) {
+        return null;
+    }
+    $minFriendsUser = Collection\minValue($users, function ($list) {
+        return count($list['friends']);
+    });
+    return $minFriendsUser;
+}
+
+function without(array $fullList, ...$items)
+{
+    $without = array_filter($fullList, function ($list) use ($items) {
+        return !in_array($list, $items);
+    });
+    return array_values($without);
+}
+
+function enlargeArrayImage($image)
+{
+    $dupItem = function ($coll) {
+        return Collection\flatten(
+            array_map(fn ($arr) => [$arr, $arr], $coll)
+        );
+    };
+    $image = array_map($dupItem, $image);
+    return $dupItem($image);
 }

@@ -14,12 +14,14 @@ namespace Hexlet\Php;
 //use function Hexlet\Php\Tests\testRun;
 //use function Hexlet\Php\Tests\testTakeOldest;
 //use function Hexlet\Php\Tests\testMathFunc;
-use function Hexlet\Php\Tests\testBinarySearch;
+//use function Hexlet\Php\Tests\testBinarySearch;
 //use function Hexlet\Php\Tests\testGetChildren;
 //use function Hexlet\Php\Tests\testGetGirlfriends;
 //use function Hexlet\Php\Tests\testGetMenCountByYear;
-
-
+//use function Hexlet\Php\Tests\testGetFreeDomainsCount;
+//use function Hexlet\Php\Tests\testGetManWithLeastFriends;
+//use function Hexlet\Php\Tests\testWithout;
+use function Hexlet\Php\Tests\testEnlargeArrayImage;
 
 $autoloadPath1 = __DIR__ . "/../vendor/autoload.php";
 $autoloadPath2 = __DIR__ . "/../../../autoload.php";
@@ -29,10 +31,14 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
+testEnlargeArrayImage();
+//testWithout();
+//testGetManWithLeastFriends();
+//testGetFreeDomainsCount();
 //testGetMenCountByYear();
 //testGetGirlFriends();
 //testGetChildren();
-testBinarySearch();
+//testBinarySearch();
 //testMathFunc();
 //testTakeOldest();
 //testRun();
