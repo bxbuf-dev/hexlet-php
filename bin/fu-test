@@ -1,0 +1,44 @@
+#!/usr/bin/env php
+<?php
+
+namespace Hexlet\Php;
+
+//use function Hexlet\Php\Tests\testAverage;
+//use function Hexlet\Php\Tests\testPrime;
+//use function Hexlet\Php\Tests\testBuildQuery;
+//use function Hexlet\Php\Tests\testMap;
+//use function Hexlet\Php\Tests\testGetSortedNames;
+//use function Hexlet\Php\Tests\testUnion;
+//use function Hexlet\Php\Tests\testSlugify;
+//use function Hexlet\Php\Tests\testExercise;
+//use function Hexlet\Php\Tests\testRun;
+//use function Hexlet\Php\Tests\testTakeOldest;
+//use function Hexlet\Php\Tests\testMathFunc;
+use function Hexlet\Php\Tests\testBinarySearch;
+//use function Hexlet\Php\Tests\testGetChildren;
+//use function Hexlet\Php\Tests\testGetGirlfriends;
+//use function Hexlet\Php\Tests\testGetMenCountByYear;
+
+
+
+$autoloadPath1 = __DIR__ . "/../vendor/autoload.php";
+$autoloadPath2 = __DIR__ . "/../../../autoload.php";
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+//testGetMenCountByYear();
+//testGetGirlFriends();
+//testGetChildren();
+testBinarySearch();
+//testMathFunc();
+//testTakeOldest();
+//testRun();
+//testExercise();
+//testSlugify();
+//testUnion();
+//testGetSortedNames();
+//testPrime();
+//testAverage();
