@@ -3,17 +3,13 @@
 namespace Hexlet\Php\StringUtilsTests;
 
 use Hexlet\Php\StringUtils;
+use Webmozart\Assert\Assert;
 
 function testStringUtils()
 {
-    if (StringUtils\capitalize('') != '') {
-    throw new \Exception("Функция работает не верно\n");
-    }
-
-    $res = StringUtils\capitalize('hello');
-    if (StringUtils\capitalize('hello') != 'Hello') {
-        throw new \Exception("Функция работает не верно\n{$res} не равно 'Hello'\n");
-    }
-
+    Assert::eq(StringUtils\capitalize(''), '');
+    Assert::eq(StringUtils\capitalize('hello'), 'Hello');
+    Assert::eq(StringUtils\capitalize('h'), 'H');
+    Assert::eq(StringUtils\capitalize('hello world!'), 'Hello world!');
     echo "Тесты прошли успешно\n";
 }
