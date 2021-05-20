@@ -22,11 +22,14 @@
         "src/Functions.php",
         "src/Map.php",
         "src/Algorythms.php",
-        "tests/Tests.php"
+        "src/StringUtils.php",
+        "tests/Tests.php",
+        "tests/StringUtilsTests.php"
       ]
     },
     "bin": [
-      "bin/fu-test"
+      "bin/fu-test",
+      "bin/su-test"
     ],
     "scripts": {
       "phpcs": "phpcs"
